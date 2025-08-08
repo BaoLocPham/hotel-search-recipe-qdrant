@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  # Development overrides for Superlinked Backend
+  superlinked-backend:
+    volumes:
+      - ./superlinked_app:/app/superlinked_app
+      - ./requirements.txt:/app/requirements.txt
+    environment:
+      - PYTHONPATH=/app
+      - APP_MODULE_PATH=superlinked_app
+    command: ["python", "-m", "superlinked.server"]
+
+  # Development overrides for Streamlit Frontend
+  streamlit-frontend:
+    volumes:
+      - ./frontend_app:/app/frontend_app
+    environment:
+      - PYTHONPATH=/app/frontend_app
+    command: ["streamlit", "run", "app/frontend/main.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"] 
