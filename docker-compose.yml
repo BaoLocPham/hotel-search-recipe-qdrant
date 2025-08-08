@@ -32,7 +32,7 @@ services:
       - CHUNK_SIZE=${CHUNK_SIZE:-100}
       - PATH_CATEGORIES=${PATH_CATEGORIES:-https://storage.googleapis.com/superlinked-recipes-data/hotels-search/categories/categories.json}
       - PATH_DATASET=${PATH_DATASET:-https://storage.googleapis.com/superlinked-recipes-data/hotels-search/dataset/dataset.jsonl}
-      - OPENAI_API_KEY=${OPENAI_API_KEY:-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}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-OPENAI_API_KEY}
       - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o}
       - QDRANT_URL=${QDRANT_URL:-http://qdrant:6333}
       - QDRANT_API_KEY=${QDRANT_API_KEY:-your-qdrant-api-key}
